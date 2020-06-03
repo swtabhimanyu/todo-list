@@ -19,42 +19,40 @@
         <h3>TODO App</h3>
         <hr>
 
-        <form name="/create" method="post">
+        <form action="/user/add" method="POST" name="todo-task">
             <div id="description">
                 <label for="description">Description</label><br>
                 <textarea name="description" placeholder="What do you need to do?" id="description-text"
-                    class="spacing font-text-color"></textarea>
+                    class="spacing font-text-color" required></textarea>
             </div>
             <hr>
             <div id="category">
                 <label for="category">Category</label><br>
                 <select name="category" class="spacing font-text-color">
-                    <option>Personal</option>
-                    <option>Work</option>
-                    <option>School</option>
-                    <option>Cleaning</option>
+                    <option value="personal" selected>Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
                 </select>
             </div>
-            <span></span>
             <div id="due-date">
-                <label for="due-date">DUE DATE</label><br>
-                <input type="date" name="due-date" class="spacing font-text-color">
+                <label for="due_date">DUE DATE</label><br>
+                <input type="date" name="due_date" class="spacing font-text-color">
             </div>
             <hr>
             <div id="submit-buttons">
-                <button type="submit" name="add-task" id="add" class="spacing font-text-color">
+                <button type="submit" id="add" class="spacing font-text-color">
                     <i class="fas fa-plus"></i>
                     ADD TASK
                 </button>
-                <button type="submit" name="delete-task" id="delete" class="spacing font-text-color">
+                <button  id="delete" class="spacing font-text-color">
                     <i class="far fa-trash-alt"></i>
                     DELETE TASK
                 </button>
             </div>
-            <hr>
+            
         </form>
-
-
+            <hr>
 
         <div id="tasks">
             <% for(let t of task) { %>
@@ -65,7 +63,9 @@
             <span> <%= t.description %></span><br>
             <span> &emsp; 
                 <i class="far fa-calendar-alt"></i>
-                <%= t.due_date %>
+                <% var d=t.due_date.toString().split(" ");%>
+                <% var ans=d[0]+" "+d[1]+" "+d[2]+" "+d[3]%>
+                <%= ans %>
             </span>
             <span id="category-tasks">
                 <b><%= t.category %></b>

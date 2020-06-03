@@ -1,7 +1,24 @@
 var tasks=require('../models/tasks');
-console.log(tasks);
+const db=require('../config/moongoose');
+const todoList=require('../models/tasks');
+
+
 module.exports.home=function(req,res){
-    return res.render('home',{
-        task: tasks
-    });
+    todoList.find(
+        {},
+        function(err,tasks){
+            if(err){
+                console.log(err);
+                return;
+            }
+            else{
+                return res.render('home',{
+                    task: tasks
+                });
+            }
+        });
+
+    
 };
+
+

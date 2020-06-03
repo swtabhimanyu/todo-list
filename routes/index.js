@@ -2,6 +2,9 @@ const express=require('express');
 
 const router=express.Router();
 
+//this is main index.js of routes folder
+
+
 const homeController=require('../controllers/home_controller');
 
 // router.get('/',function(req,res){
@@ -10,7 +13,8 @@ const homeController=require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 
-//router.use('/user',require('./user'));
+router.use('/user' , require('./add_task'));
+
 
 console.log('Inside routes folder index.js');
 
