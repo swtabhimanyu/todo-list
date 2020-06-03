@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        TODO LIST
+    </title>
+
+    <script src="https://kit.fontawesome.com/3671c8b17f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="spacing">
+
+    <div id="container">
+        <h3>TODO App</h3>
+        <hr>
+
+        <form name="/create" method="post">
+            <div id="description">
+                <label for="description">Description</label><br>
+                <textarea name="description" placeholder="What do you need to do?" id="description-text"
+                    class="spacing font-text-color"></textarea>
+            </div>
+            <hr>
+            <div id="category">
+                <label for="category">Category</label><br>
+                <select name="category" class="spacing font-text-color">
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>School</option>
+                    <option>Cleaning</option>
+                </select>
+            </div>
+            <span></span>
+            <div id="due-date">
+                <label for="due-date">DUE DATE</label><br>
+                <input type="date" name="due-date" class="spacing font-text-color">
+            </div>
+            <hr>
+            <div id="submit-buttons">
+                <button type="submit" name="add-task" id="add" class="spacing font-text-color">
+                    <i class="fas fa-plus"></i>
+                    ADD TASK
+                </button>
+                <button type="submit" name="delete-task" id="delete" class="spacing font-text-color">
+                    <i class="far fa-trash-alt"></i>
+                    DELETE TASK
+                </button>
+            </div>
+            <hr>
+        </form>
+
+
+
+        <div id="tasks">
+            <% for(let t of task) { %>
+                <div id="task">
+            <span>
+                <input type="checkbox" name="delete" id="delete-task">
+            </span>
+            <span> <%= t.description %></span><br>
+            <span> &emsp; 
+                <i class="far fa-calendar-alt"></i>
+                <%= t.due_date %>
+            </span>
+            <span id="category-tasks">
+                <b><%= t.category %></b>
+            </span>
+        </div>
+            <hr>
+
+            <% } %>
+
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

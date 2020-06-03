@@ -1,0 +1,133 @@
+body{
+    background-color: lavender;
+    font-family: 'PT Serif', serif;
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.spacing{
+    letter-spacing: 2px;
+    word-spacing:4px ;
+}
+
+#container{
+    position: relative;
+    background-color: white;
+    height: auto;
+    width:70%;
+    margin: auto;
+    border: 1px double grey;
+}
+
+
+
+form div{
+    padding: 10px;
+    margin: 15px;
+    /* border-bottom:1px solid grey;    */
+}
+
+
+
+
+#container h3{
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
+}
+
+#description{
+}
+
+#description-text{
+    border: none;
+    resize: none;
+    width: 80%;
+}
+
+
+#description-text:focus{ 
+    outline: none;
+}
+
+.font-text-color{
+    color: grey;
+    font-size: 1.2rem;
+}
+
+#category{
+    display: inline-block;
+    position: relative;
+    width: 40%;
+}
+
+#due-date{
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    margin-left:5% ;
+}
+
+
+
+#category select{
+    border: none;
+    padding: 10px;
+    width:60%
+}
+
+#category select:focus{
+    outline:none;
+}
+
+#submit-buttons{
+    position: relative;
+    left:25%;
+    right:25%;
+}
+
+#submit-buttons button{
+    padding: 10px;
+    border: none;
+    color: white;
+}
+ 
+i{
+     margin-right: 5px;
+ }
+ 
+#add{
+    background-color: lightslategrey;
+}
+
+#delete{
+    background-color: tomato;
+}
+
+
+table,td{  
+    border: 2px solid black;
+}
+
+#task{
+    height: auto;
+    width: 100%;
+    overflow: auto;
+}
+
+#tasks span{
+    margin-left: 10px;
+}
+
+#category-tasks{
+    position: relative;
+    float: right;
+    margin-top: 0px;
+    margin-right: 20px;
+    color: white;
+    background-color: greenyellow; 
+    padding: 10px;
+    
+}
+
