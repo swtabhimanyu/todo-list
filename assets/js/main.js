@@ -31,3 +31,6 @@ for (var t of task_category){
         t.style.display = 'none';
     }
 }
+
+
+//console.log(document.getElementById('#delete-task:checked'));

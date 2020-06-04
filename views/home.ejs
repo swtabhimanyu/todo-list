@@ -5,7 +5,6 @@
     <title>
         TODO LIST
     </title>
-
     <script src="https://kit.fontawesome.com/3671c8b17f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     </link>
@@ -23,7 +22,7 @@
             <div id="description">
                 <label for="description">Description</label><br>
                 <textarea name="description" placeholder="What do you need to do?" id="description-text"
-                    class="spacing font-text-color" required></textarea>
+                    class="spacing font-text-color"></textarea>
             </div>
             <hr>
             <div id="category">
@@ -44,23 +43,31 @@
                 <button type="submit" id="add" class="spacing font-text-color">
                     <i class="fas fa-plus"></i>
                     ADD TASK
-                </button>
-                <button  id="delete" class="spacing font-text-color">
-                    <i class="far fa-trash-alt"></i>
-                    DELETE TASK
-                </button>
-            </div>
-            
-        </form>
-            <hr>
 
-        <div id="tasks">
-            <% for(let t of task) { %>
-                <div id="task">
+
+                </button>
+
+        </form>
+
+        <form method="GET" action="/user/delete">
+            <button id="delete" class="spacing font-text-color" type="submit">
+                <i class="far fa-trash-alt"></i>
+                DELETE TASK
+                <!-- this is delete buttomn -->
+            </button>
+
+
+    </div>
+    <hr>
+
+    <div id="tasks">
+        <% for(let t of task) { %>
+        <div id="task">
             <span>
-                <input type="checkbox" name="delete" id="delete-task">
+                <input type="checkbox" name="<%= t._id %>" id="delete-task">
             </span>
-            <span> <%= t.description %></span><br>
+
+            <span> <%= t.description %></span><br>  
             <span> &emsp; 
                 <i class="far fa-calendar-alt"></i>
                 <% var d=t.due_date.toString().split(" ");%>
@@ -71,11 +78,14 @@
                 <b><%= t.category %></b>
             </span>
         </div>
-            <hr>
+        <hr>
 
-            <% } %>
+        <% } %>
 
-        </div>
+        </form>
+    </div>
+
+
     </div>
     <script src="/js/main.js"></script>
 </body>

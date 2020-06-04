@@ -25,5 +25,3 @@ module.exports.create=function(request,response){
     return response.redirect('back');
 }
 
-
-//this is controller
